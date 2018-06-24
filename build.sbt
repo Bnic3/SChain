@@ -12,8 +12,11 @@ libraryDependencies ++= Seq(
   "org.scalactic" %% "scalactic" % "3.0.5",
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
   "org.scorexfoundation" %% "scrypto" % "2.1.2",
-  "org.scorexfoundation" % "iodb_2.12" % "0.4.0")
+  "org.scorexfoundation" %% "iodb" % "0.3.2",
+  "net.debasishg" %% "redisclient" % "3.7"
 
+ )
+//"org.scorexfoundation" % "iodb_2.12" % "0.4.0"
 
 val circeVersion = "0.9.3"
 
