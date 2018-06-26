@@ -25,4 +25,17 @@ trait MyDB {
 
   }
 
+  def hashSet(key:String, value:Map[String,String] ) = {
+    r.hmset(key,value)
+  }
+
+  def getCoinbase(key:String,  pubField:String, privField:String  ):Map[String,String]={
+    r.hmget[String,String](key, pubField ,privField) match {
+      case Some(map) => map
+      case None => Map()
+    }
+  }
+
+
+
 }

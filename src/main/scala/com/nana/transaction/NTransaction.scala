@@ -11,12 +11,12 @@ case class NTransaction(
                         timestamp: Timestamp)
 
 object NTransaction{
-  implicit val JsonRep:Encoder[NTransaction] = (tx : NTransaction) =>{
+  def txToJSON(tx:NTransaction) ={
     Map(
-      "fee"-> tx.fee.asJson,
-      "timestamp"-> tx.timestamp.asJson,
-      "recipient" -> tx.recipient.asJson,
-      "from" -> tx.from.asJson
+      "fee"-> s"${tx.fee}",
+      "timestamp"-> s"${tx.timestamp}",
+      "recipient" -> s"${tx.recipient}",
+      "from" -> s"${tx.from}"
     ).asJson
   }
 }

@@ -7,7 +7,7 @@ object MyTags {
   object TXID extends TaggedType[Int]
   object Timestamp extends  TaggedType[Long]
   object Address extends  TaggedType[String]
-  object PrivateKey extends TaggedType[Array[Byte]]
+  object SecretKey extends TaggedType[String]
   object PublicKey extends TaggedType[Array[Byte]]
 
 
@@ -18,8 +18,8 @@ object MyTags {
   type Timestamp = Timestamp.Type
   type Address = Address.Type
 
-  type PrivateKey = PrivateKey.Type
-  type PublicKey = PrivateKey.Type
+  type SecretKey = SecretKey.Type
+  type PublicKey = PublicKey.Type
 
 
 

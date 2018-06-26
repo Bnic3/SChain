@@ -11,18 +11,21 @@ case class NBlock(blockIndex:BlockId,
              nonce:Int,
              prevHash: String,
              hash: String,
-             transactions: Seq[NTransaction]){
+             transactions: Seq[NTransaction]) {
+
+  //override  val toString: String = s"NBlock(${this.asJson.noSpaces})"
 
 
 }
 
 object NBlock{
-implicit val nblockEcoder:Encoder[NBlock] = (block:NBlock)=>{
-  Map("blockIndex" -> block.blockIndex.asJson,
-    "timestamp" -> block.timestamp.asJson,
-    "nonce" -> block.nonce.asJson,
-    "prevHash" -> block.prevHash.asJson,
-    "hash" -> block.hash.asJson,
-    "transactions" -> block.transactions.map(_.asJson)).asJson
-}
+
+def nblockToJson(block:NBlock)={
+    Map("blockIndex" -> s"${block.blockIndex}",
+      "timestamp" -> s"${block.timestamp}",
+      "nonce" -> s"${block.nonce}",
+      "prevHash" -> s"${block.prevHash}",
+      "hash" -> s"${block.hash}",
+      "transactions" -> s"${block.transactions}").asJson
+  }
 }
